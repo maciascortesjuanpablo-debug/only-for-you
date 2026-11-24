@@ -647,6 +647,7 @@ $('bqNext').addEventListener('click', () => {
   function pageEl(i, full){
     const pg = document.createElement('div'); pg.className = 'pg';
     const p = pages[i]; if(p.relleno) return pg;
+    pg.dataset.i = i;
     if(i === 0){ const g = document.createElement('div'); g.className = 'pg-greet'; g.textContent = C.saludo; pg.append(g); }
     const h = document.createElement('div'); h.className = 'pg-head'; h.textContent = p.titulo || ''; pg.append(h);
     const b = document.createElement('div'); b.className = 'pg-body'; pg.append(b);
@@ -658,6 +659,18 @@ $('bqNext').addEventListener('click', () => {
     if(full){ renderFull(b, i); pg.classList.add('done'); }
     return pg;
   }
+  function fitPage(pg){
+    const i = +pg.dataset.i; if(isNaN(i)) return;
+    const body = pg.querySelector('.pg-body'); if(!body) return;
+    const wasDone = pg.classList.contains('done');
+    renderFull(body, i); body.style.fontSize = '';
+    let guard = 0;
+    while(pg.scrollHeight > pg.clientHeight + 1 && guard++ < 16){
+      body.style.fontSize = (parseFloat(getComputedStyle(body).fontSize) - 1) + 'px';
+    }
+    if(!wasDone) body.textContent = '';
+  }
+  const fitAll = boxes => boxes.forEach(b => b.querySelectorAll('.pg[data-i]').forEach(fitPage));
   function coverEl(){
     const d = document.createElement('div'); d.className = 'pg pg-cover';
     d.innerHTML = '<i>✦</i><small>Este libro es para</small><b></b><i>✦</i>';
@@ -706,6 +719,7 @@ $('bqNext').addEventListener('click', () => {
       const x = sp[k]; if(x == null) continue;
       const el = content(x); slot.append(el); if(typeof x === 'number') mounted[x] = el;
     }
+    fitAll([slotL, slotR]);
     dots(); nav();
     const todo = pagesOf(sp).filter(i => i > top);
     if(!todo.length){ afterSpread(); return; }
@@ -741,6 +755,7 @@ $('bqNext').addEventListener('click', () => {
     for(const k in mounted) delete mounted[k];
     leaf.style.transition = 'none'; leaf.style.display = 'block';
     leaf.style.transform = fwd ? 'rotateY(0deg)' : 'rotateY(-180deg)';
+    fitAll([leafF, leafB, slotL, slotR]);
     void leaf.offsetWidth;
     leaf.classList.add('turning');
     leaf.style.transition = 'transform 1.2s cubic-bezier(.45,.05,.25,1)';

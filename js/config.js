@@ -17,7 +17,7 @@ const CONFIG = {
     { titulo:"Tus ojos",             texto:"Me encantan tus ojos. Y más cuando me miras: ahí se me olvida casi todo lo demás." },
     { titulo:"Tu sonrisa",           texto:"Tu sonrisa me arregla el día entero. Es de las cosas que más quiero seguir viendo." },
     { titulo:"Tu voz",               texto:"Tu voz me gusta muchísimo. Podría escucharte hablar de cualquier cosa y ya valdría la pena." },
-    { titulo:"Tú, todita",           texto:"Y tu forma de ser, y todo lo demás. Sí, todo. Jajaja. Todo tú me gusta, Isa." }
+    { titulo:"Tú, todita",           texto:"Y tu forma de ser, y todo lo demás. Sí, todo. Jajaja. Todo tú me gusta mi vida 🧡." }
   ],
 
   /* Ramos de rosas: se muestran de uno en uno, a pantalla completa.
@@ -44,7 +44,7 @@ const CONFIG = {
       nota:"Porque todo tú me gusta. Sí, todo.",
       rosas:8, rosa:"#a8143f", oscura:"#560820", clara:"#e0587e", lazo:"#f5c542", papel:"#2f2a3d", paniculata:true }
   ],
-  mensajeRamos: "Ojalá algún día pueda regalártelos de verdad 🌹",
+  mensajeRamos: "Te mereces todas las flores del mundo 🌹",
 
   /* Retos de rasca: van de menos a más difícil.
        secreto   → mensaje del primer reto (rascar la tarjeta)
@@ -52,12 +52,11 @@ const CONFIG = {
        boleto    → intentos (raspaditas), corazones (cuántos debe encontrar) y premio
        linterna  → palabras escondidas en la oscuridad (juntas forman una frase) */
   rasca: {
-    secreto: "Spoiler: me gustas muchísimo, Isa. Y se me da fatal guardar secretos 🙈",
-    secretoExtra: "Y ahora que lo sabes… ¿sigues rascando? 😏",
-    foto: "",
-    fotoTexto: "Esta foto me encanta porque sales tú 🧡",
-    boleto: { intentos: 5, corazones: 3, premio: "🎉 ¡Premio! Vale por una salida a donde tú elijas, con todo pagado y cero prisas." },
-    linterna: { palabras: ["Contigo","hasta","los","días","grises","brillan"], mensaje: "Gracias por buscarlas con tanta paciencia 🧡" }
+    secreto: "Spoiler: me gustas muchísisisisisimo mi vida, y no me importa decirlo.",
+    secretoExtra: "Aunque ya lo sabes, siempre me gusta recordártelo 🧡",
+    
+    boleto: { intentos: 5, corazones: 3, premio: "🎉 ¡Premio! Vale por una cosa que tu quieras sin poder decir que no." },
+    linterna: { palabras: ["Contigo","hasta","los","días","grises","brillan"], mensaje: "Contigo siempre encuentro lo mejor en cada día. 🧡" }
   },
 
   /* Frasco de mensajes: cada vez que lo toca, sale una nota al azar.
@@ -67,14 +66,14 @@ const CONFIG = {
     subtitulo: "Cada vez que lo toques saldrá una nota. Saca las que quieras.",
     minimo: 6,        // cuántas notas debe sacar antes de poder continuar
     mensajes: [
-      { cuando:"el día se ponga feo",         texto:"Respira, mi vida. Lo peor ya pasó, que es haberlo vivido. Y si quieres contármelo, aquí estoy, igual que tú siempre estás para mí." },
-      { cuando:"tengas algo que celebrar",    texto:"Quiero ser el primero en enterarme. Y el segundo en pedir pastel." },
-      { cuando:"estés aburrida",              texto:"Escríbeme. No prometo ser interesante, pero sí ser una distracción de calidad." },
-      { cuando:"te acuerdes de mí",           texto:"Gracias por el pensamiento, Isa. Te aviso que es mutuo y bastante frecuente." },
+      { cuando:"el día se ponga feo",         texto:"Respira, mi vida. Todo saldra bien y recuerda que siempre voy a estar para ti, igual que tú siempre estás para mí." },
+      { cuando:"tengas algo que celebrar",    texto:"Siempre seré tu fan #1, celebrare cada momento contigo." },
+      { cuando:"estés aburrida",              texto:"Escríbeme. No prometo ser interesante, pero tendras siempre mi compañia." },
+      { cuando:"te acuerdes de mí",           texto:"Gracias por el pensamiento mi vida, yo tambien estoy pensando en ti, siempre, en todo momento." },
       { cuando:"no puedas dormir",            texto:"Cuenta ovejas, o mejor cuenta las cosas lindas que me has dicho. Dudo que llegues al final." },
-      { cuando:"estés estresada",             texto:"Una cosa a la vez, mi vida. Tú puedes con esto, y si no, lo hacemos juntos." },
+      { cuando:"estés estresada",             texto:"Una cosa a la vez, mi vida. Tú puedes con esto, confio en ti, eres la mejor, y si no, siempre tendras mi apoyo." },
       { cuando:"dudes de ti",                 texto:"Eres mucho más de lo que crees. Lo digo yo, que veo lo atenta y cariñosa que eres con quien quieres." },
-      { cuando:"necesites una sonrisa",       texto:"Aquí tienes una: 🙂. Pero la tuya es mejor, que lo sepas." },
+      { cuando:"necesites una sonrisa",       texto:"Quieres un chiste? — ¿Sabes cuál es el colmo de un astronauta? — Quejarse de que no tiene espacio. — ¿Y el colmo de una silla? — Tener patas y no poder irse cuando la conversación se pone aburrida.." },
       { cuando:"tengas frío",                 texto:"Te mando un abrazo virtual, calentito y sin costo adicional." },
       { cuando:"quieras que te escriba",      texto:"No necesitas pedir permiso. Escríbeme a la hora que sea." },
       { cuando:"no sepas qué hacer",          texto:"Plan sugerido: algo rico para tomar y contarme todo. Yo me apunto." },
@@ -92,8 +91,8 @@ const CONFIG = {
       { cuando:"estés cansada",               texto:"Descansar también es avanzar. Hoy tienes permiso total para no hacer nada." },
       { cuando:"hayas logrado algo",          texto:"Estoy orgulloso de ti. Y te lo digo ahora porque a veces se me olvida decirlo en voz alta." },
       { cuando:"pienses que exagero",         texto:"Quizá un poco, pero cada palabra la digo en serio." },
-      { cuando:"llegue la noche",             texto:"Que descanses. Y que sueñes algo bonito, a poder ser conmigo de invitado." },
-      { cuando:"te despiertes",               texto:"Buenos días, Isa. Llegué antes que tu café a desearte un día increíble." },
+      { cuando:"llegue la noche",             texto:"Que descanses. Y que sueñes algo bonito, y que ese sueño me tenga cómo invitado." },
+      { cuando:"te despiertes",               texto:"Buenos días, mi vida. Cómo amaneces? Te deseo un día maravilloso." },
       { cuando:"quieras un plan",             texto:"Te propongo un helado, una caminata y cero prisa. Tú eliges el día." },
       { cuando:"te preguntes si me importas", texto:"Muchísimo. Y este frasco entero es la prueba." },
       { cuando:"quieras otra nota más",       texto:"Siempre hay una más. Y si se acaban, las reescribo." }
@@ -113,11 +112,11 @@ const CONFIG = {
     paginas: [
       { titulo: "Lo que pienso",
         texto:
-`Ya sé lo que estás pensando: «¿y esto a qué viene?». A nada en especial: ni cumpleaños, ni aniversario.
+`Ya sé lo que estás pensando: «¿y esto a qué viene?». A nada en especial: No siempre es necesario algo especial para recordarte lo importante que te has vuelto para mi.
 
 Nos conocíamos de antes, coincidíamos, y luego pasamos mucho tiempo sin hablarnos. Hasta que el [27 de septiembre|Después de tanto tiempo sin hablarnos, ese día te escribí. Un solo mensaje, y mira todo lo que cambió desde entonces. Hoy hace {{dias}} días.] te escribí, y desde entonces pienso en ti {un poco|bastante más de lo que admitiría}.
 
-No somos nada oficial todavía, y lo tengo claro. Pero [tu sonrisa|Tu sonrisa me arregla el día entero. Es de las cosas que más quiero seguir viendo.] se me queda dando vueltas en la cabeza.` },
+Aunque apenas empezamos nuestra historia, espero que siga siendo tan especial como lo ha sido hasta ahora. Cosas cómo [tu sonrisa|Tu sonrisa me arregla el día entero. Es de las cosas que más quiero seguir viendo.] se me queda dando vueltas en la cabeza.` },
       { titulo: "Lo que siento",
         texto:
 `Hoy puedo decirlo sin rodeos: {me gustas bastante|me gustas muchísimo}. Me gusta lo atenta que eres conmigo, cómo me cuidas y lo cariñosa que eres. Y cuando me dices cosas lindas, me las quedo todas.
@@ -135,7 +134,7 @@ Lo único que quiero ahora es [quererte bien|Sin prisa y sin presión. Tú marca
       pista: "Dicen que los libros buenos guardan algo detrás de la última página…"
     },
     firma: "Con todo mi cariño",
-    ps: { texto: "P.D.: si encontraste este bolsillo, es que eres de las que no se rinden. Eso también me gusta de ti. Ahora sí: respóndeme con calma, y con sinceridad." },
+    ps: { texto: "P.D.: si encontraste este bolsillo, es que eres de las que no se rinden. Eso también me gusta de ti." },
     musica: ""
   },
 
@@ -147,11 +146,11 @@ Lo único que quiero ahora es [quererte bien|Sin prisa y sin presión. Tú marca
   anillo: {
     paso: "Algo que ya es nuestro",
     titulo: "Nuestro anillo de papel",
-    mensajeCaja: "Te lo prometí el día que me enseñaste «Paper Rings». Y yo cumplo lo que prometo.",
+    mensajeCaja: "Aqui esta nuestro anillo de papel, como prometi aunque por supuesto que no se quedara solo en la pantalla.",
     pista: "Toca la cajita para abrirla 💍",
     pistaAnillo: "Toca el anillo para sacarlo ✨",
-    textoAnillo: "Isa ✦ paper rings ✦ cielo",
-    textoAbierto: "Un día me enseñaste «Paper Rings» y yo te dije que te iba a dar un anillo de papel. Es de papel y no vale nada… pero lo hice con todo el cariño del mundo.",
+    textoAnillo: "Isa ✦ Mi vida ✦ cielo",
+    textoAbierto: "Un anillo de papel, todo lo que somos y seremos va a estar aquí para siempre.",
     alTocar: "Te queda perfecto, mi vida 🧡",
     boton: "Ir al calendario de adviento 🎄"
   },
