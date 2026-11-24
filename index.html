@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Para ti 💌</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="hearts"></canvas>
+<div class="stepper"><div id="bar"></div></div>
+
+<!-- 0 INTRO -->
+<section id="s0" class="active" tabindex="0" role="button" aria-label="Empezar">
+  <p class="script intro-top">Detuve lo que estaba haciendo para hacerle algo a</p>
+  <h1 id="nombre"></h1>
+  <div class="envelope">💌</div>
+  <p class="hint" id="introHint">Toca el sobre, no muerde</p>
+  <div class="quick" id="quick" hidden>
+    <p class="quick-title">Entra a donde quieras ✨</p>
+    <div class="quick-grid">
+      <button type="button" data-go="1">💌 Pruebas de que me gustas</button>
+      <button type="button" data-go="2">🌹 Ramos de rosas</button>
+      <button type="button" data-go="3">🎟️ Retos de rasca</button>
+      <button type="button" data-go="4">🫙 Frasco de notas</button>
+      <button type="button" data-go="5">📖 La carta</button>
+      <button type="button" data-go="7">💍 El anillo de papel</button>
+      <button type="button" data-go="6">🎄 Calendario de adviento</button>
+    </div>
+    <button class="big small" id="replay" type="button">🔁 Hacer el recorrido otra vez</button>
+  </div>
+</section>
+
+<!-- 1 PRUEBAS -->
+<section id="s1">
+  <p class="bq-step" id="prStep"></p>
+  <h2>Pruebas de que me gustas</h2>
+  <div class="dots" id="prDots" aria-hidden="true"></div>
+  <div class="pr-stage" id="prStage">
+    <div class="env-wrap" id="envWrap">
+      <div class="env-back"></div>
+      <div class="env-letter"></div>
+      <div class="env-front"></div>
+      <div class="env-flap"></div>
+      <button class="seal" id="seal" aria-label="Abrir la carta">♥</button>
+    </div>
+    <article class="paper" id="paper">
+      <div class="paper-num" id="prNum"></div>
+      <h3 id="prTitle"></h3>
+      <p id="prText"></p>
+    </article>
+  </div>
+  <p class="bq-tap" id="prHint"></p>
+  <div class="pr-actions">
+    <button class="like" id="prLike" hidden>🧡 Me gusta esta</button>
+    <button class="big" id="prNext" hidden>Siguiente carta ➜</button>
+  </div>
+  <p class="gardenMsg" id="prSummary"></p>
+  <button class="big" hidden id="n1">Sigue, hay más ➜</button>
+</section>
+
+<!-- 2 RAMOS -->
+<section id="s2">
+  <p class="bq-step" id="bqStep"></p>
+  <h2 id="bqTitle"></h2>
+  <div class="bq-view" id="bqView" role="button" tabindex="0" aria-label="Desenvolver el ramo"></div>
+  <p class="bq-tap" id="bqTap"></p>
+  <p class="bq-phrase" id="bqPhrase"></p>
+  <p class="bq-note" id="bqNote"></p>
+  <button class="big" hidden id="bqNext">Siguiente ramo ➜</button>
+  <p class="gardenMsg" id="gardenMsg"></p>
+  <button class="big" hidden id="n2">Todavía falta ➜</button>
+</section>
+
+<!-- 3 RASCA -->
+<section id="s3">
+  <p class="bq-step" id="rsStep"></p>
+  <h2 id="rsTitle"></h2>
+  <p class="sub" id="rsSub"></p>
+  <div class="rs-stage" id="rsStage"></div>
+  <p class="gardenMsg" id="rsMsg"></p>
+  <button class="big" hidden id="rsNext">Siguiente reto ➜</button>
+  <button class="big" hidden id="n3">Casi llegamos ➜</button>
+</section>
+
+<!-- 4 FRASCO -->
+<section id="s4">
+  <h2 id="jarTitle"></h2>
+  <p class="sub" id="jarSub"></p>
+  <button class="jar-btn" id="jar" aria-label="Sacar una nota del frasco"></button>
+  <p class="jar-tap" id="jarTap">Toca el frasco 👆</p>
+  <p class="jar-count" id="jarCount"></p>
+  <button class="big" hidden id="n4">Última parada ➜</button>
+</section>
+
+<!-- 5 CARTA FINAL (libro) -->
+<section id="s5">
+  <div class="night" id="nightScene" aria-hidden="true">
+    <div class="stars"></div>
+    <div class="moon"></div>
+    <div class="shoot"></div><div class="shoot s2"></div>
+    <div class="garland" id="garland"></div>
+    <div class="mist"></div>
+    <div class="desk"></div>
+    <div id="nightDyn"></div>
+  </div>
+  <button class="music" id="musicBtn" hidden aria-label="Poner o quitar la música">🎵</button>
+
+  <div class="book" id="book">
+    <div class="book-pages" id="bookPages">
+      <div class="slot slot-l" id="slotL"></div>
+      <div class="slot slot-r" id="slotR"></div>
+      <div class="pleaf" id="leaf"><div class="pface front" id="leafF"></div><div class="pface back" id="leafB"></div></div>
+      <div class="pleaf cover-leaf" id="coverLeaf" role="button" tabindex="0" aria-label="Abrir el libro"><div class="pface front" id="coverF"></div><div class="pface back" id="coverB"></div></div>
+    </div>
+  </div>
+  <p class="lt-hint" id="ltHint"></p>
+  <div class="lt-nav">
+    <button class="lt-arrow" id="ltPrev" aria-label="Página anterior">◀</button>
+    <div class="dots" id="ltDots" aria-hidden="true"></div>
+    <button class="lt-arrow" id="ltNext" aria-label="Página siguiente">▶</button>
+  </div>
+  <button class="big small" id="closeBook" hidden>Cerrar el libro 📖</button>
+
+  <div id="question" hidden>
+    <h2 id="qtext"></h2>
+    <div class="btns">
+      <button class="big" id="yes"></button>
+      <button class="big" id="no"></button>
+    </div>
+    <p id="happy"></p>
+    <button class="big" id="toAdvent2" hidden>Tengo algo más para ti 🎁</button>
+  </div>
+</section>
+
+<!-- 7 EL ANILLO DE PAPEL (va antes del calendario) -->
+<section id="s7">
+  <p class="bq-step" id="rgStep"></p>
+  <h2 id="rgTitle"></h2>
+  <div class="rscene" id="rgScene">
+    <div class="rglow"></div>
+    <div class="rb2-top" id="rgBox" role="button" tabindex="0" aria-label="Abrir la cajita">
+      <div class="rb2-in"></div>
+      <div class="rb2-lid"><div class="lid-f"></div><div class="lid-b"></div></div>
+    </div>
+    <div class="ring-pos" id="ringPos"><div class="ring3d" id="ring3d"></div></div>
+    <div class="rb2-front" id="rgFront"></div>
+    <div class="rb2-card" id="rgCard"></div>
+  </div>
+  <p class="gardenMsg" id="rgMsg"></p>
+  <p class="bq-tap" id="rgHint"></p>
+  <button class="big" hidden id="rgNext"></button>
+</section>
+
+<!-- 6 CALENDARIO DE ADVIENTO -->
+<section id="s6">
+  <div class="lights" id="lights" aria-hidden="true"></div>
+  <h2 class="adv-title">✦ Calendario de adviento ✦</h2>
+  <p class="sub" id="advInfo"></p>
+  <div class="adv-prog"><div class="adv-bar"><div id="advBar"></div></div><span id="advCount"></span></div>
+  <div class="stage" id="stage">
+    <div class="zoomer" id="zoomer">
+      <div class="cabwrap" id="cabwrap">
+        <div class="cab-shadow"></div>
+        <div class="cabinet" id="advent"></div>
+        <div class="leaf leaf-l" id="leafL"><div class="f"></div><div class="b"></div></div>
+        <div class="leaf leaf-r" id="leafR"><div class="f"></div><div class="b"></div></div>
+        <button class="clasp" id="clasp" aria-label="Abrir el calendario">✦</button>
+      </div>
+    </div>
+    <p class="clasp-hint">Toca el broche dorado para abrir ✨</p>
+  </div>
+  <button class="big small" id="backHome">Volver al inicio</button>
+</section>
+
+<!-- Ventana del calendario -->
+<div class="overlay" id="overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="m-day" id="mDay"></div>
+    <div class="m-emoji" id="mEmoji"></div>
+    <h3 id="mTitle"></h3>
+    <p id="mText"></p>
+    <button class="big small" id="mClose">Cerrar</button>
+  </div>
+</div>
+
+<!-- Nota del frasco -->
+<div class="note-overlay" id="noteOverlay" hidden>
+  <div class="note-card" id="noteCard" role="dialog" aria-modal="true">
+    <div class="note-when" id="noteWhen"></div>
+    <p class="note-text" id="noteText"></p>
+    <div class="note-from" id="noteFrom"></div>
+    <button class="big small" id="noteClose">Guardarla 💌</button>
+  </div>
+</div>
+
+<!-- Recuerdo de la carta -->
+<div class="note-overlay" id="memOverlay" hidden>
+  <div class="note-card" id="memCard" role="dialog" aria-modal="true">
+    <div class="note-when" id="memWord"></div>
+    <img class="mem-img" id="memImg" alt="" hidden>
+    <p class="note-text" id="memText"></p>
+    <button class="big small" id="memClose">Cerrar 💌</button>
+  </div>
+</div>
+
+<button class="home-btn" id="homeBtn" hidden aria-label="Ir al inicio">🏠 Inicio</button>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="js/config.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
